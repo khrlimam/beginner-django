@@ -1,0 +1,7 @@
+{% if latest_question_list %}
+    {% for question in latest_question_list %}
+    	<h3><a href="/polls/{{ question.id }}" title="Question detail">{{ question.question_text }}</a></h3>
+    {% endfor %}
+{% else %}
+    <h1>Tidak ada data</h1>
+{% endif %}
