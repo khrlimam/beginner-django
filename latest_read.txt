@@ -1,1 +1,2 @@
 http://localhost/django/intro/tutorial03.html#a-shortcut-get-object-or-404
+http://localhost/django/intro/tutorial04.html
