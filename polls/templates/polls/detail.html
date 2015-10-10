@@ -1,28 +1,12 @@
-<<<<<<< HEAD
-<h3> {{ question.question_text }} </h3>
-
-{% if error_message %}
-    <span style='color: red'>{{ error_message }}</span>
-{% endif %}
-
-<form action="{% url 'polls:vote' question.id+'/vote' %}" method="POST" accept-charset="utf-8">
-{% csrf_token %}
-{% for choice in question.choices_set.all %}
-	<input type="radio" name="choice" value="{{ choice.id }}" id="choice{{ forloop.counter }}">
-	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
-{% endfor %}
-	<input type="submit" value="Vote">
-=======
 <h1>{{ question.question_text }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
-{% for choice in question.choice_set.all %}
+{% for choice in question.choices_set.all %}
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
 {% endfor %}
 <input type="submit" value="Vote" />
->>>>>>> 9d3bb8542dfb28ea8885e8fd162770f5d7e3a51c
 </form>
