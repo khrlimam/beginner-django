@@ -2,3 +2,4 @@ http://localhost/django/intro/tutorial03.html#a-shortcut-get-object-or-404
 http://localhost/django/intro/tutorial04.html
 http://localhost/django/intro/tutorial05.html
 http://localhost/django/intro/tutorial05.html#more-comprehensive-tests
+http://localhost/django/intro/tutorial05.html#testing-our-new-view
