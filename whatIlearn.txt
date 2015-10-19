@@ -1,0 +1,22 @@
+Today, Minggu 19 Okt 2015
+Django test client http://localhost/django/intro/tutorial05.html#the-django-test-client
+	- set up test environment in <i>shell</i> interface:
+		- from django.test.utils import setup_test_environment
+		- call setup_test_environment()
+	- import client test module
+		- from django.test import Client
+		- we can then call/instanciate object from that (Client) with client = Client()
+		- with that object we can make client test (virtual client that can test our view layer) for example:
+			- client = Client()
+			  client.get('/') # we know that url '/' aint exist so if we read the http status code response from that object it's gonna return 404
+			  client.status_code #404
+		- we also can call the url through url resolvers with reverse module:
+			- from django.core.urlresolvers import reverse
+			- cleint.get(reverse('polls:index'))
+			- client.status_code #200
+
+Improve polls index view http://localhost/django/intro/tutorial05.html#improving-our-view
+we can filter the data which is going to be displayed in our view, the correct view is the view that shows data less or equal than recent time. so we can do following code
+in our polls index method (IndexView) we are using generic view (generic.ListView) so we going to modify method get_queryset with following code:
+	- return Questions.object.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+	- in order to filter the data, pub_date__lte=timezone.now() means the data that going to be displayed just data with pub_date less or equal to recent time.

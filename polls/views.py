@@ -2,6 +2,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.views import generic
+from django.utils import timezone
 
 from .models import Questions, Choices
 
@@ -13,7 +14,8 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
-        return Questions.objects.order_by('-pub_date')[:5]
+        # with filter pub_date__lte we filter the question that published less or equal to recent time
+        return Questions.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 
 class DetailsView(generic.DetailView):
