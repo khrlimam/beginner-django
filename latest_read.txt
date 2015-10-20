@@ -4,3 +4,7 @@ http://localhost/django/intro/tutorial05.html
 http://localhost/django/intro/tutorial05.html#more-comprehensive-tests
 http://localhost/django/intro/tutorial05.html#testing-our-new-view
 http://localhost/django/intro/tutorial05.html#ideas-for-more-tests
+http://localhost/django/intro/whatsnext.html
+
+In read:
+http://localhost/django/intro/reusable-apps.html

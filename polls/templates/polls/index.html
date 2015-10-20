@@ -1,6 +1,8 @@
 <html>
 <head>
     <title>Index Polls</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}" type="text/css" />
 </head>
 <body>
 {% if latest_question_list %}
